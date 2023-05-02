@@ -3,41 +3,31 @@ package main
 import "fmt"
 
 func main() {
+	// arrays have fixed length
+	var ages [3]int = [3]int{90, 60, 72}
+	var ages2 = [3]int{65, 18, 120}
+	ages3 := [4]int{80, 40, 52}
 
-	var firstName string = "Jane"
-	var secondName = "Hadidi"
-	var thirdName string
+	fmt.Println(ages, len(ages))
+	fmt.Println(ages2, len(ages2))
+	fmt.Println(ages2, len(ages2))
+	fmt.Println(ages3, len(ages3))
 
-	fmt.Println(firstName, secondName, thirdName)
+	// slices (arrays behind the scenes)
+	var names = []string{"James", "Peter", "Ole"}
 
-	thirdName = "Panenka"
+	fmt.Println(names, len(names))
 
-	fmt.Println(firstName, secondName, thirdName)
+	names = append(names, "Rashford")
+	fmt.Println(names, len(names))
 
-	// cannot be used outside of a function
-	age := 22
-	name := "Doe"
+	// slice ranges
 
-	var anotherAge int = 20
-	otherAge := 21
+	range1 := names[1:3]
+	range2 := names[2:]
+	range3 := names[:3]
 
-	fmt.Println(anotherAge, otherAge)
-
-	// Print
-	fmt.Print("Hello, ")
-	fmt.Print("world! \n")
-
-	fmt.Println("Hello, world!")
-
-	fmt.Println("My age is", age, "and my name is", name)
-
-	// Formatted string
-	// %_ => format specifer
-	fmt.Printf("My age is %v and my name is %v \n", age, name)
-	fmt.Printf("My age is %v and my name is %q \n", age, name)
-	fmt.Printf("My age is of type %T \n", age)
-	fmt.Printf("This float is %f \n", 209.78)
-	fmt.Printf("This float is %0.1f \n", 209.78)
-	var savedString = fmt.Sprintf("My age is %v and my name is %q \n", age, name)
-	fmt.Printf("The saved string is: %v", savedString)
+	fmt.Println(range1)
+	fmt.Println(range2)
+	fmt.Println(range3)
 }
