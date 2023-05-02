@@ -2,26 +2,9 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
-func SayGreeting(name string) {
-	fmt.Printf("Good morning %v \n", name)
-}
-
-func SayBye(name string) {
-	fmt.Printf("Good bye %v \n", name)
-}
-
-func cycleNames(names []string, f func(string)) {
-	for _, v := range names {
-		f(v)
-	}
-}
-
-func circleArea(radius float64) float64 {
-	return math.Pi * radius * radius
-}
+// go run main.go greetings.go bye.go cyclenames.go circlearea.go
 
 func main() {
 	SayGreeting("Jane")
