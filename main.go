@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-// go run main.go greetings.go bye.go cyclenames.go circlearea.go
+// go run main.go greetings.go bye.go cyclenames.go circlearea.go getinitials.go
 
 func main() {
 	SayGreeting("Jane")
@@ -16,5 +16,8 @@ func main() {
 
 	a1 := circleArea(5)
 	fmt.Println(a1)
-	fmt.Printf("Area for circle is: %0.4f", a1)
+	fmt.Printf("Area for circle is: %0.4f \n", a1)
+
+	fn1, sn1 := getInitials("jane doe")
+	fmt.Println(fn1, sn1)
 }
