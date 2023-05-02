@@ -1,33 +1,37 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
+
+func SayGreeting(name string) {
+	fmt.Printf("Good morning %v \n", name)
+}
+
+func SayBye(name string) {
+	fmt.Printf("Good bye %v \n", name)
+}
+
+func cycleNames(names []string, f func(string)) {
+	for _, v := range names {
+		f(v)
+	}
+}
+
+func circleArea(radius float64) float64 {
+	return math.Pi * radius * radius
+}
 
 func main() {
-	// arrays have fixed length
-	var ages [3]int = [3]int{90, 60, 72}
-	var ages2 = [3]int{65, 18, 120}
-	ages3 := [4]int{80, 40, 52}
+	SayGreeting("Jane")
 
-	fmt.Println(ages, len(ages))
-	fmt.Println(ages2, len(ages2))
-	fmt.Println(ages2, len(ages2))
-	fmt.Println(ages3, len(ages3))
+	SayBye("Doe")
 
-	// slices (arrays behind the scenes)
-	var names = []string{"James", "Peter", "Ole"}
+	cycleNames([]string{"Messi", "Mbappe", "Neymar"}, SayGreeting)
+	cycleNames([]string{"Messi", "Mbappe", "Neymar"}, SayBye)
 
-	fmt.Println(names, len(names))
-
-	names = append(names, "Rashford")
-	fmt.Println(names, len(names))
-
-	// slice ranges
-
-	range1 := names[1:3]
-	range2 := names[2:]
-	range3 := names[:3]
-
-	fmt.Println(range1)
-	fmt.Println(range2)
-	fmt.Println(range3)
+	a1 := circleArea(5)
+	fmt.Println(a1)
+	fmt.Printf("Area for circle is: %0.4f", a1)
 }
