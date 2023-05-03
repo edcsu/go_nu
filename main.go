@@ -21,6 +21,7 @@ func main() {
 	fn1, sn1 := getInitials("jane doe")
 	fmt.Println(fn1, sn1)
 
+	// maps => dictionary in python or objects in JS
 	menu := map[string]float64{
 		"coffee":  5000.99,
 		"tea":     2500.99,
