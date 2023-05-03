@@ -4,6 +4,9 @@ import (
 	"fmt"
 )
 
+// non-pointer types -> strings, ints, bools, floats, arrays, structs
+// pointer types -> maps, slices, functions
+
 // go run main.go greetings.go bye.go cyclenames.go circlearea.go getinitials.go
 
 func main() {
