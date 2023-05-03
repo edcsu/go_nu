@@ -7,6 +7,10 @@ import (
 // non-pointer types -> strings, ints, bools, floats, arrays, structs
 // pointer types -> maps, slices, functions
 
+func updateLocation(x *string) {
+	*x = "updated"
+}
+
 // go run main.go greetings.go bye.go cyclenames.go circlearea.go getinitials.go
 
 func main() {
@@ -55,4 +59,15 @@ func main() {
 	phonebook[256773123456] = "Anita"
 	fmt.Println(phonebook)
 
+	location := "Kampala"
+
+	fmt.Println("Memory address of location: ", &location)
+
+	memoryLocation := &location
+	fmt.Println("Memory address of location: ", memoryLocation)
+	fmt.Println("value of Memory address of location: ", *memoryLocation)
+
+	updateLocation(memoryLocation)
+
+	fmt.Println(location)
 }
